@@ -1,6 +1,8 @@
-name: "My First CI job"
+name: My First CI Job
 
-on: [pull_request_target,push]
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
@@ -23,6 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
+          cache-dependency-path: exp/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -30,5 +33,5 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Run command
+      - name: Run tests
         run: npm run test
