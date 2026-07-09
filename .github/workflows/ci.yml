@@ -11,7 +11,8 @@ on:
       - Random_branch
 jobs:
   build:
-    stragegy:
+
+    strategy:
       matrix:
         systems:[ubuntu-latest,windows-latest,macos-latest]
 
