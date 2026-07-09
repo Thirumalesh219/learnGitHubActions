@@ -3,11 +3,12 @@ name: Backup job for every 15 minutes
 on:
   workflow_dispatch:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   BackUp:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Sample job $(date)"
+      - name: Just print time
+        run: echo "Sample job $(date)"
 
