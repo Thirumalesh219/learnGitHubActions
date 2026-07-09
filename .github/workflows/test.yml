@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  Run regression:
+  Run_regression:
 
     defaults:
       run:

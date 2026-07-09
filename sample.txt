@@ -16,5 +16,7 @@ Tough we hard code matrix values in steps it will still run all the values in ma
 
 When we are using (-) for the statements below that block we should write them after the (-) only.
 
+Job name cannot contain spaces
+
 workflow_dispatch
 repository_dispatch
