@@ -2,7 +2,7 @@ name: Backup job for every 15 minutes
 
 on:
   schedule:
-    - cron: '1 * * * *'
+    - cron: '*/1 * * * *'
 
 jobs:
   BackUp:
