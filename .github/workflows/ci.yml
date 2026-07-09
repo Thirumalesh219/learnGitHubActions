@@ -15,16 +15,13 @@ jobs:
     strategy:
       matrix:
         systems:[ubuntu-latest,windows-latest,macos-latest]
+        node-version: [20,22,24]
 
     runs-on: ${{matrix.systems}}
 
     defaults:
       run:
         working-directory: exp
-
-    strategy:
-      matrix:
-        node-version: [20,22,24]
 
     steps:
       - name: Checkout code
