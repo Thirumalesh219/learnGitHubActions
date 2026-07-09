@@ -27,3 +27,4 @@ to stop the running jobs if one of them fails (By default it is true)
 
 workflow_dispatch
 repository_dispatch
+
