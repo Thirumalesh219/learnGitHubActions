@@ -4,6 +4,7 @@ on:
             - main
             // This will run only when a new commit is pushed to the main branch or merged a new PR
             to main branch
+            we can add any number of brances here
 
 
 workflow_dispatch
