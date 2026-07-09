@@ -14,5 +14,7 @@ For every keyword we should have space after (:)
 
 Tough we hard code matrix values in steps it will still run all the values in matrix
 
+When we are using (-) for the statements below that block we should write them after the (-) only.
+
 workflow_dispatch
 repository_dispatch
