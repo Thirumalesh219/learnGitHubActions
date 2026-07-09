@@ -11,7 +11,11 @@ on:
       - Random_branch
 jobs:
   build:
-    runs-on: ubuntu-latest
+    stragegy:
+      matrix:
+        systems:[ubuntu-latest,windows-latest,macos-latest]
+
+    runs-on: ${{matrix.systems}}
 
     defaults:
       run:
