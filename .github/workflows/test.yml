@@ -14,7 +14,8 @@ jobs:
       matrix:
         systems: [ubuntu-latest]
         node-version: [24]
-
+      
+    runs-on: ${{matrix.systems}}
     steps:
       -name: checkout to repo
       uses: actions/checkout@v4
