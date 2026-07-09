@@ -8,6 +8,10 @@ on:
 
         paths-ignore: ["**.md", "docs/*"]
         Here push event is not triggered when any md file is changes or any content in docs/ is changed
+    
+    schedule:
+        - cron: '0 * * * *'
+          timezone:'Asia/Kolkata'
 
 
 We should have only one strategy per job , we can define multiple variables in one job
