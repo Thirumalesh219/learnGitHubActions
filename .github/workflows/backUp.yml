@@ -5,6 +5,7 @@ on:
     - cron: '2 * * * *'
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - run: echo "Sample job $(date)"
+  BackUp:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Sample job $(date)"
