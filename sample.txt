@@ -6,6 +6,5 @@ on:
             to main branch
             we can add any number of brances here
 
-
 workflow_dispatch
 repository_dispatch
