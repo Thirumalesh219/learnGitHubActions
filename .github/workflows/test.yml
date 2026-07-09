@@ -1,0 +1,33 @@
+name: Job for regression testing
+
+on: 
+  push:
+  pull_request:
+
+jobs:
+  Run regression:
+
+    defaults:
+      run:
+        working-directory: exp
+    strategy:
+      matrix:
+        systems: [ubuntu-latest]
+        node-version: [24]
+
+    steps:
+      -name: checkout to repo
+      uses: actions/checkout@v4
+
+      -name: setUp node
+      uses: actions/setup-node@v4
+      with: 
+        node-version: ${{matrix.node-version}}
+        cache: npm
+        cache-dependency-path: exp/package-lock.json
+
+      -name: install dependencies
+      run: npm ci
+
+      -name: Create build
+      run: npm build
