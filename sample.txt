@@ -2,7 +2,8 @@ on:
     push:
         branches:
             - main
-            // This will run only when a new commit is pushed to the main branch
+            // This will run only when a new commit is pushed to the main branch or merged a new PR
+            to main branch
 
 
 workflow_dispatch
