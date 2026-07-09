@@ -42,3 +42,36 @@ jobs:
 
       # - name: Run tests
       #   run: npm run test
+
+  deploy:
+
+    strategy:
+      matrix:
+        systems: [ubuntu-latest,windows-latest,macos-latest]
+        node-version: [20,22,24]
+
+    runs-on: ${{matrix.systems}}
+
+    defaults:
+      run:
+        working-directory: exp
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: exp/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # - name: Run tests
+      #   run: npm run test
