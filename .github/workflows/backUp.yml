@@ -1,8 +1,9 @@
 name: Backup job for every 15 minutes
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '* * * * *'
 
 jobs:
   BackUp:
