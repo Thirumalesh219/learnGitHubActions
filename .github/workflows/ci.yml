@@ -26,11 +26,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      
+      - name: SetUp node js ${{matrix.systems}} Node version ${{matrix.node-version}}
         uses: actions/setup-node@v4
         with:
-        - name: Device ${{matrix.systems}} Node version ${{matrix.node-version}}
           node-version: ${{ matrix.node-version }}
           cache: npm
           cache-dependency-path: exp/package-lock.json
