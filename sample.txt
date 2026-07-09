@@ -9,5 +9,7 @@ on:
 
 We should have only one strategy per job , we can define multiple variables in one job
 
+For every keyword we should have space after (:)
+
 workflow_dispatch
 repository_dispatch
