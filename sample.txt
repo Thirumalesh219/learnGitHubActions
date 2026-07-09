@@ -6,6 +6,9 @@ on:
             to main branch
             we can add any number of brances here
 
+        paths-ignore: ["**.md", "docs/*"]
+        Here push event is not triggered when any md file is changes or any content in docs/ is changed
+
 
 We should have only one strategy per job , we can define multiple variables in one job
 
@@ -17,6 +20,10 @@ Tough we hard code matrix values in steps it will still run all the values in ma
 When we are using (-) for the statements below that block we should write them after the (-) only.
 
 Job name cannot contain spaces
+
+In strategies we have one more field called fail-first a boolean field (true or false) where it used
+to stop the running jobs if one of them fails (By default it is true)
+
 
 workflow_dispatch
 repository_dispatch
