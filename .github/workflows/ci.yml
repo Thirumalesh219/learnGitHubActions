@@ -30,6 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
+        - name: Device ${{matrix.systems}} Node version ${{matrix.node-version}}
           node-version: ${{ matrix.node-version }}
           cache: npm
           cache-dependency-path: exp/package-lock.json
@@ -50,7 +51,7 @@ jobs:
         systems: [ubuntu-latest,windows-latest,macos-latest]
         node-version: [20,22,24]
 
-    runs-on: ${{matrix.systems}}
+    runs-on: ubuntu-latest #${{matrix.systems}}
 
     defaults:
       run:
@@ -63,7 +64,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20 #${{ matrix.node-version }}
           cache: npm
           cache-dependency-path: exp/package-lock.json
 
