@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
 
 env:
-  - name: Thirumalesh
-  - age: 10
+  name: Thirumalesh
+  age: 10
 jobs:
   printVariables:
     runs-on: ubuntu-latest
