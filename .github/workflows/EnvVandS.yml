@@ -1,4 +1,4 @@
-name: Sample repository variables and secrets
+name: Sample Environment variables and secrets
 
 on:
   workflow_dispatch:
