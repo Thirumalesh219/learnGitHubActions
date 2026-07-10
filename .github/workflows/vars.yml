@@ -8,6 +8,11 @@ env:
 jobs:
   printVariables:
     runs-on: ubuntu-latest
+    env:
+      job: IN_JOB_VARIABLE
     steps:
       - name: Print name and age
         run: echo "Name is $name and age is $age"
+
+      - name: Print In job variable
+        run: echo "In job variable $IN_JOB_VARIABLE"
