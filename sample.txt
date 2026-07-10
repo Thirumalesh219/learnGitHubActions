@@ -46,3 +46,5 @@ When we print the secrets and variables in workflows variables are displayed as 
 are displayed as masked strings
 
 One job can use only one environment 
+
+If we use needs field for a job that job will run after successfully completing the previous job
