@@ -6,7 +6,7 @@ on:
 jobs:
   WorkFlowForEnvironment:
     runs-on: ubuntu-latest
-    envionment: dev
+    environment: dev
     steps:
       - run: echo ${{secrets.RepoSecret}}
       - run: echo ${{vars.RepoVariable}}
