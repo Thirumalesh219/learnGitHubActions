@@ -31,3 +31,18 @@ to stop the running jobs if one of them fails (By default it is true)
 
 workflow_dispatch
 repository_dispatch
+
+We have two different ways to store critical keys in github repository
+    1 -> Repository secrets & variables
+    2 -> Environment secrets & variables
+
+Repository secrets -> Can be used by all the workflows we can store only one value for a secret
+Repository variable -> Can be used by all the workflows we can store only one value per variable
+
+Difference between secrets and variables
+Secrets are very confidential we can not show it to public
+
+When we print the secrets and variables in workflows variables are displayed as is. But secrets
+are displayed as masked strings
+
+One job can use only one environment 

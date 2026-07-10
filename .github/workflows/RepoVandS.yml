@@ -1,0 +1,10 @@
+name: Sample repository variables and secrets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo ${{secrets.RepoSecret}}
+    - run: echo ${{vars.RepoVariable}}
