@@ -12,7 +12,13 @@ jobs:
       job: IN_JOB_VARIABLE
     steps:
       - name: Print name and age
-        run: echo "Name is $name and age is $age"
+        run: |
+          echo "Name is $name and age is $age"
+          echo "Name is $name and age is $age"
+          echo "Name is $name and age is $age"
+        env:
+          name: Raj
+          age: 20
 
       - name: Print In job variable
         run: echo "In job variable $job $IN_STEP_VARIABLE"
