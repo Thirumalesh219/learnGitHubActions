@@ -1,0 +1,26 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  CreateBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CreateBuild
+        run: echo "CreatedBuild"
+
+  RunTests:
+    needs: CreateBuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "Tests passed"
+  
+  Deploy:
+    needs: RunTests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploy code"
