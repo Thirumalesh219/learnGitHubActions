@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
 
 env:
-  name: Thirumalesh
-  age: 10
+  - name: Thirumalesh
+  - age: 10
 jobs:
   printVariables:
     runs-on: ubuntu-latest
     steps:
       - name: Print name and age
-        run: echo "Name is ${{name}} and age is ${{age}}"
+        run: echo "Name is $name and age is $age"
