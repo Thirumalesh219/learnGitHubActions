@@ -12,6 +12,7 @@ jobs:
       - run: echo ${{vars.REPOVARIABLE}}
 
   WorkFlowForStageEnvironment:
+    needs: WorkFlowForDevEnvironment
     runs-on: ubuntu-latest
     environment: stage
     steps:
@@ -19,6 +20,7 @@ jobs:
       - run: echo ${{vars.RepoVariable}}
   
   WorkFlowForProdEnvironment:
+    needs: WorkFlowForStageEnvironment
     runs-on: ubuntu-latest
     environment: prod
     steps:
