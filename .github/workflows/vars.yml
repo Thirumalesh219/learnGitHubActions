@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print name and age
-        run: echo "Name is $name and age is $age"
+        run: echo "Name is $(name) and age is $(age)"
