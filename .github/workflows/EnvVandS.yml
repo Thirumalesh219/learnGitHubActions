@@ -8,19 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-      - run: echo ${{secrets.RepoSecret}}
-      - run: echo ${{vars.RepoVariable}}
+      - run: echo ${{secrets.REPOSECRET}}
+      - run: echo ${{vars.REPOVARIABLE}}
 
   WorkFlowForStageEnvironment:
     runs-on: ubuntu-latest
     environment: stage
     steps:
       - run: echo ${{secrets.RepoSecret}}
-      - run: echo ${{secrets.RepoVariable}}
+      - run: echo ${{vars.RepoVariable}}
   
   WorkFlowForProdEnvironment:
     runs-on: ubuntu-latest
     environment: prod
     steps:
       - run: echo ${{secrets.RepoSecret}}
-      - run: echo ${{secrets.RepoVariable}}
+      - run: echo ${{vars.RepoVariable}}
