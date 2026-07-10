@@ -4,9 +4,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  WorkFlowForEnvironment:
+  WorkFlowForDevEnvironment:
     runs-on: ubuntu-latest
     environment: dev
     steps:
       - run: echo ${{secrets.RepoSecret}}
       - run: echo ${{vars.RepoVariable}}
+
+  WorkFlowForStageEnvironment:
+    runs-on: ubuntu-latest
+    environment: stage
+    steps:
+      - run: echo ${{secrets.RepoSecret}}
+      - run: echo ${{secrets.RepoVariable}}
+  
+  WorkFlowForProdEnvironment:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - run: echo ${{secrets.RepoSecret}}
+      - run: echo ${{secrets.RepoVariable}}
