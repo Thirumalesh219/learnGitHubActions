@@ -30,6 +30,16 @@ on:
   repository_dispatch:
 
 jobs:
+
+  PrintTheReadedData:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the values
+        run: |
+          echo "Print needs approval ${{ inputs.ApprovalForDeployment }}"
+          echo "Print needs approval ${{ inputs.sampleString }}"
+          echo "Print needs approval ${{ inputs.sampleNumber }}"
+          echo "Print needs approval ${{ inputs.sampleOptions }}"
   CreateBuild:
     runs-on: ubuntu-latest
     steps:
