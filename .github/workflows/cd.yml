@@ -28,6 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
+        if: ${{ inputs.ApprovalForDeployment }}
         run: echo "Deploy code"
-    if: ${{ inputs.ApprovalForDeployment }}
-    environment: prod
+    # environment: prod
