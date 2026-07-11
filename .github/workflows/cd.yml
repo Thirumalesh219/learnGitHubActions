@@ -23,11 +23,19 @@ jobs:
       - name: Run tests
         run: echo "Tests passed"
   
-  Deploy:
+  DeployWithApproval:
     needs: RunTests
     runs-on: ubuntu-latest
+    if: ${{ inputs.ApprovalForDeployment }}
     steps:
       - name: Deploy
-        if: ${{ inputs.ApprovalForDeployment }}
         run: echo "Deploy code"
-    # environment: prod
+    environment: prod
+
+  DeployWithoutApproval:
+    needs: RunTests
+    runs-on: ubuntu-latest
+    if: ${{ inputs.ApprovalForDeployment }}
+    steps:
+      - name: Deploy
+        run: echo "Deploy code"
