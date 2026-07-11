@@ -7,6 +7,26 @@ on:
         description: "Needs approval"
         required: true
         type: boolean
+
+      sampleString:
+        description: "Just to experiment reading"
+        required: true
+        type: string
+
+      sampleNumber:
+        description: "Reading number"
+        required: true
+        type: number
+
+      sampleOptions:
+        description: "Reading options"
+        required: true
+        type: choice
+        options:
+          - option1
+          - option2
+          - option3
+
   repository_dispatch:
 
 jobs:
