@@ -3,7 +3,7 @@ name: Deployment
 on:
   workflow_dispatch:
     inputs:
-      ApprovalForDeoployment:
+      ApprovalForDeployment:
         description: "Needs approval"
         required: true
         type: boolean
@@ -29,5 +29,5 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploy code"
-        if: ${{ inputs.ApprovalForDeoployment }}
-        environment: prod
+    if: ${{ inputs.ApprovalForDeployment }}
+    environment: prod
