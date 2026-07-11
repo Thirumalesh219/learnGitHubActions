@@ -2,6 +2,11 @@ name: Deployment
 
 on:
   workflow_dispatch:
+    inputs:
+      ApprovalForDeoployment:
+        description: "Needs approval"
+        required: true
+        type: boolean
   repository_dispatch:
 
 jobs:
@@ -21,7 +26,8 @@ jobs:
   Deploy:
     needs: RunTests
     runs-on: ubuntu-latest
-    environment: prod
     steps:
       - name: Deploy
         run: echo "Deploy code"
+        if: ${{ inputs.ApprovalForDeoployment }}
+        environment: prod
