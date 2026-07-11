@@ -26,6 +26,7 @@ on:
           - option1
           - option2
           - option3
+        default: option4
 
   repository_dispatch:
 
