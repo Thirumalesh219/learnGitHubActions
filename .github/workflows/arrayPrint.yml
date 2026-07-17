@@ -11,3 +11,6 @@ jobs:
     steps:
       - name: Print vairables
         run: echo ${{matrix.users}}
+
+# store users array in repo vairalbes, this wont work if we store them in environment variables
+# fromJson ? each environment variable is stored as string even if we store them as ['a','b']
