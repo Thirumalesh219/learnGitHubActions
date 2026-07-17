@@ -5,7 +5,6 @@ on:
 jobs:
   printArray:
     runs-on: ubuntu-latest
-    environment: dev
     strategy:
       matrix:
         users:${{fromJson(vars.users)}}
