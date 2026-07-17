@@ -1,0 +1,8 @@
+name: Check for array variables
+on:
+  workflow_dispatch:
+
+jobs:
+  printArray:
+    environment: dev
+    echo: ${{vars.users}}
