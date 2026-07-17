@@ -6,6 +6,9 @@ jobs:
   printArray:
     runs-on: ubuntu-latest
     environment: dev
+    strategy:
+      matrix:
+        users:${{vars.users}}
     steps:
       - name: Print vairables
-        run: echo ${{vars.users}}
+        run: echo ${{matrix.users}}
