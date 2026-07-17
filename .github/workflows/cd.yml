@@ -35,6 +35,8 @@ jobs:
   PrintTheReadedData:
     runs-on: ubuntu-latest
     steps:
+      - name: Print the triggered user
+        run: echo ${{ github.actor }}
       - name: print the values
         run: |
           echo "Print needs approval ${{ inputs.ApprovalForDeployment }}"
