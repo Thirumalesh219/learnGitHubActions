@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        users:${{fromJson(vars.users)}}
+        users: ${{ fromJson(vars.users) }}
     steps:
       - name: Print vairables
         run: echo ${{matrix.users}}
