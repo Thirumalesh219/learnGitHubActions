@@ -23,8 +23,8 @@ jobs:
       
       - name: Inject variable to env file
         run: |
-          echo "VITE_V1=variableFromEnv">exp/.env
-          echo "VITE_V2=variableToEnv">>exp/.env
+          echo "VITE_V1=${{secrets.VITE_V1}}">exp/.env
+          echo "VITE_V2=${{vars.VITE_V2}}">>exp/.env
         
       - name: Build
         run: |
