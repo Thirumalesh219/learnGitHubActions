@@ -5,7 +5,11 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  console.log("V1", import.meta.env.VITE_V1);
+  console.log("V2", import.meta.env.VITE_V2);
+
+
 
   return (
     <>
