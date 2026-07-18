@@ -1,0 +1,33 @@
+name: Injecting Env file to exp folder
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exp:
+    runs-on: ubuntu-latest
+    environment: stage
+    steps:
+      - name: checkout to frontend folder
+        run: actions/checkout@v4
+
+      - name: Set up node js
+        run: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: install dependencies
+        run: npm ci
+      
+      - name: Inject variable to env file
+        run: |
+          echo "VITE_V1=variableFromEnv">exp/.env
+          echo "VITE_V2=variableToEnv">>exp/.env
+        
+      - name: Build
+        run: |
+          cd exp
+          npm run build
+
+      - name: print env file
+        run: cat exp/.env      
