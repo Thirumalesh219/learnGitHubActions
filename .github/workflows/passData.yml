@@ -6,9 +6,9 @@ on:
 jobs:
   store:
     runs-on: ubuntu-latest
-    outputs:
-      variable1: ${{steps.v1.outputs.a}}
-      variable2: ${{steps.v2.outputs.b}}
+    # outputs:
+    #   variable1: ${{steps.v1.outputs.a}}
+    #   variable2: ${{steps.v2.outputs.b}}
     steps:
       - name: Sotre variable 1
         id: v1
