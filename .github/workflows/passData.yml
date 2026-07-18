@@ -4,32 +4,62 @@ on:
   workflow_dispatch:
 
 jobs:
-  store:
-    runs-on: ubuntu-latest
-    outputs:
-      variable1: ${{steps.v1.outputs.a}}
-      variable2: ${{steps.v2.outputs.b}}
-    steps:
-      - name: Sotre variable 1
-        id: v1
-        run: echo "a=Thirumalesh">>$GITHUB_OUTPUT
-
-      - name: Store variable 2
-        id: v2
-        run: echo "b=Kumar">>$GITHUB_OUTPUT
-
-      - name: Print variable 1
-        run: echo "Vairable 1 is ${{steps.v1.outputs.a}}"
-
-      - name: Print variable 2
-        run: echo "Variable 2 is ${{steps.v2.outputs.b}}"
-
-  read_or_access:
-    needs: store
+  ArtifactUpload:
     runs-on: ubuntu-latest
     steps:
-      - name: Print variable 1
-        run: echo "Vairable 1 is ${{needs.store.outputs.variable1}}"
+      - name: Store some text in file
+        run: echo "Hi I am thirumalesh">>sample.txt
+
+      - name: upload to github artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fileUploadingToartifacts
+          path: sample.txt
+
+      - name: print that file
+        run: cat sample.txt
+
+  ArtifactDownload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: fileUploadingToartifacts
+
+      - name: print the downloaded artifact
+        run: cat sample.txt
+
       
-      - name: Print variable 2
-        run: echo "Vairable 2 is ${{needs.store.outputs.variable2}}"
+
+
+
+  # store:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     variable1: ${{steps.v1.outputs.a}}
+  #     variable2: ${{steps.v2.outputs.b}}
+  #   steps:
+  #     - name: Sotre variable 1
+  #       id: v1
+  #       run: echo "a=Thirumalesh">>$GITHUB_OUTPUT
+
+  #     - name: Store variable 2
+  #       id: v2
+  #       run: echo "b=Kumar">>$GITHUB_OUTPUT
+
+  #     - name: Print variable 1
+  #       run: echo "Vairable 1 is ${{steps.v1.outputs.a}}"
+
+  #     - name: Print variable 2
+  #       run: echo "Variable 2 is ${{steps.v2.outputs.b}}"
+
+  # read_or_access:
+  #   needs: store
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Print variable 1
+  #       run: echo "Vairable 1 is ${{needs.store.outputs.variable1}}"
+      
+  #     - name: Print variable 2
+  #       run: echo "Vairable 2 is ${{needs.store.outputs.variable2}}"
