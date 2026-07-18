@@ -24,7 +24,7 @@ jobs:
       - name: Print variable 2
         run: echo "Variable 2 is ${{steps.v2.outputs.b}}"
 
-  read/access:
+  read_or_access:
     needs: store
     runs-on: ubuntu-latest
     steps:
